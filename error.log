@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "train_rl.py", line 355, in <module>
+    loss_history = train_loop(args, device, dataloader, sam_tracker, text_encoder, proj_module, agent, loss_history, writer, ckpt_dir)
+  File "train_rl.py", line 274, in train_loop
+    current_bbox = env.reset()
+  File "/public/cyl/fourth_works/ReVi-SAM-3D/env/sam_closed_loop.py", line 78, in reset
+    init_mask = self._predict_mask_from_bbox(
+  File "/public/cyl/fourth_works/ReVi-SAM-3D/env/sam_closed_loop.py", line 235, in _predict_mask_from_bbox
+    masks_3d[init_slice_idx] = init_mask
+RuntimeError: The expanded size of the tensor (64) must match the existing size (256) at non-singleton dimension 1.  Target sizes: [64, 64].  Tensor sizes: [256, 256]
