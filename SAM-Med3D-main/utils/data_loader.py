@@ -23,11 +23,13 @@ class Dataset_Union_ALL(Dataset):
         split_idx=0,
         pcc=False,
         get_all_meta_info=False,
+        is_labeled=True,
     ):
         self.paths = paths
         self.data_type = data_type
         self.split_num = split_num
         self.split_idx = split_idx
+        self.is_labeled = is_labeled
 
         self._set_file_paths(self.paths)
         self.image_size = image_size
@@ -92,6 +94,7 @@ class Dataset_Union_ALL(Dataset):
             return {
                 "image": subject.image.data.clone().detach(),
                 "label": subject.label.data.clone().detach(),
+                "is_labeled": self.is_labeled,
             }
         elif self.get_all_meta_info:
             meta_info = {
@@ -103,13 +106,15 @@ class Dataset_Union_ALL(Dataset):
             return {
                 "image": subject.image.data.clone().detach(),
                 "label": subject.label.data.clone().detach(),
-                "meta_info": meta_info
+                "meta_info": meta_info,
+                "is_labeled": self.is_labeled,
             }
         else:
             return {
                 "image": subject.image.data.clone().detach(),
                 "label": subject.label.data.clone().detach(),
                 "path": self.image_paths[index],
+                "is_labeled": self.is_labeled,
             }
 
     def _set_file_paths(self, paths):

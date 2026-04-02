@@ -77,18 +77,18 @@ def get_next_click3D_torch_no_gt_naive(prev_seg):
 
         if len(points) > 0:
             point = points[np.random.randint(len(points))]
-            is_positive = pred_masks[i, 0, point[1], point[2], point[3]]
+            is_positive = pred_masks[i, 0, point[0], point[1], point[2]]
 
-            bp = point[1:].clone().detach().reshape(1, 1, 3)
+            bp = point.clone().detach().reshape(1, 1, 3)
             bl = torch.tensor([int(is_positive)], dtype=torch.long).reshape(1, 1)
             batch_points.append(bp)
             batch_labels.append(bl)
         else:
             point = torch.Tensor([np.random.randint(sz)
                                   for sz in pred_masks[i, 0].size()]).to(torch.int64)
-            is_positive = pred_masks[i, 0, point[1], point[2], point[3]]
+            is_positive = pred_masks[i, 0, point[0], point[1], point[2]]
 
-            bp = point[1:].clone().detach().reshape(1, 1, 3)
+            bp = point.clone().detach().reshape(1, 1, 3)
             bl = torch.tensor([int(is_positive)], dtype=torch.long).reshape(1, 1)
             batch_points.append(bp)
             batch_labels.append(bl)

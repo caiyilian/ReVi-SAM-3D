@@ -1,13 +1,6 @@
 python train.py \
  --batch_size 1 \
- --num_workers 2 \
- --task_name "DATASET_Liver" \
- --checkpoint "sam_med3d_turbo.pth" \
- --lr 8e-5 \
- --num_epochs 100 \
- --gpu_ids 0 \
- --img_size 128 \
+ --num_workers 4 \
+ --num_epochs 4 \
  --val_split 0.3 \
- --val_interval 1 \
- --eval_num_clicks 2 \
- --accumulation_steps 2
+ --semi_supervised_labeled_ratio 0.5
