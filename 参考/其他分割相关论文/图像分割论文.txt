@@ -1,0 +1,337 @@
+(1)A Deep Semantic Segmentation Network with Semantic and Contextual Refinements
+**Task**: This paper addresses the misalignment problem in upsampling high-level feature maps and the limited receptive field for global context capture in semantic segmentation, aiming to enhance segmentation accuracy, especially for object boundaries and global context understanding .
+
+**Proposed Method & Innovations**:
+1. **Semantic Refinement Module (SRM)**: Learns transformation offsets for each pixel in upsampled feature maps, guided by high-resolution features and neighboring offsets. It uses a pixel-wise mask to refine coarse offsets via weighted combination of 3×3 neighbor offsets, improving semantic alignment at object boundaries .
+2. **Contextual Refinement Module (CRM)**: Captures global context across spatial and channel dimensions. It aggregates multi-stage backbone features to enrich channel context, then uses a serial attention framework (channel → spatial) for interactive learning, addressing the imbalance between dimensions .
+
+(2)A frequency attention-embedded network for polyp segmentation
+**Task**: This paper focuses on advancing endoscopy imaging segmentation of gastrointestinal polyps, aiming to address the challenges in distinguishing complex polyp structures within diverse mucosal tissue environments .
+
+**Proposed method and innovations**: The study proposes the Frequency Attention-Embedded Network (FAENet). Its key innovation lies in leveraging frequency-based attention mechanisms, specifically segregating and processing image data into high and low-frequency components. It integrates Intra-Component Attention (ICA) and Cross-Component Attention (CCA) mechanisms to enhance feature representation: ICA refines details within each frequency band, while CCA facilitates interactions between the bands. This design preserves essential edge details, refines learned representations, and ensures robust segmentation across varied imaging conditions .
+
+(3)Adaptive Frequency Enhancement Network for Remote Sensing Image Semantic Segmentation
+**Task**: This paper focuses on semantic segmentation of high-resolution remote sensing images, which is crucial for land-use monitoring and urban planning .
+
+**Proposed Method and Innovations**: 
+The study proposes the Adaptive Frequency Enhancement Network (AFENet), which integrates two key components. 
+1. The Adaptive Frequency and Spatial Feature Interaction Module (AFSIM) dynamically separates and modulates high- and low-frequency features according to input image content by adaptively generating two masks, providing optimal details and contextual supplementary information for ground object feature representation . 
+2. The Selective Feature Fusion Module (SFM) selectively fuses global context and local detailed features to enhance the network’s representation capability, further strengthening interactions between frequency and spatial features . 
+Overall, AFENet leverages both frequency- and spatial-domain information through cross-attention and selective feature fusion to effectively model ground object features .
+
+(4)Automatic Polyp Segmentation via Multi-scale Subtraction Network
+- **Task**: This paper focuses on automatic polyp segmentation from colonoscopy images, which is crucial for the early detection of colorectal cancer as over 90% of colorectal cancer develops from colorectal polyps .
+
+- **Proposed Method**: The study proposes a multi-scale subtraction network (MSNet). Its key innovations include:
+  - A subtraction unit (SU) designed to generate difference features between adjacent level features in the encoder, capturing complementary information and highlighting differences .
+  - Pyramidally equipping SUs at different levels with varying receptive fields to obtain rich multi-scale difference information .
+  - A training-free "LossNet" that comprehensively supervises polyp-aware features from the bottom to the top layer, driving MSNet to capture both detailed and structural cues simultaneously .
+
+(5)Boundary-Guided Lightweight Semantic Segmentation With Multi-Scale Semantic Context
+The task of this paper is to address the limitations in lightweight semantic segmentation, specifically that existing lightweight dual-resolution networks often ignore multi-scale semantic context and neglect object boundaries, which are significant for the task. It focuses on lightweight semantic segmentation beneficial to multimedia applications like self-driving, robotic vision, and virtual reality .
+
+The proposed method is a Boundary-guided dual-resolution lightweight network with multi-scale Semantic Context (BSCNet). Its innovations include: 
+- An Extremely Lightweight Pyramid Pooling Module (ELPPM) designed on top of the low-resolution branch to capture multi-scale semantic context through a global-to-local context fusion strategy, using depth-wise convolutions for efficiency .
+- A simple Boundary Auxiliary Fusion Module (BAFM) that uses predicted object boundaries as high-level guidance to propagate pixel information throughout the entire object area, increasing feature similarity within the same object and discrimination between different objects while maintaining lightweight design .
+- The network inherits a dual-resolution architecture (high-resolution and low-resolution branches) with Efficient Compact Convolution Modules (ECCMs) and Bilateral Fusion Modules (BFMs) to enhance feature representation and information communication between branches .
+
+(6)CenterFormer: A Novel Cluster Center Enhanced Transformer for Unconstrained Dental Plaque Segmentation
+The task of this paper is to address the challenge of accurately segmenting dental plaque in unconstrained environments, where dental plaque exhibits low contrast and high variability in appearance .
+
+The proposed method is CenterFormer, a novel cluster center enhanced transformer. Its innovations lie in two aspects: firstly, integrating a cluster center encoder with a transformer layer to form a multi-scale pyramid clustering module, which groups similar pixels into regions based on multiple levels of feature maps’ intensity and texture information, enabling the transformer to focus on local contours and edges around teeth regions ; secondly, designing Multiple Granularity Perceptions using a pyramid fusion mechanism to capture multiple scales of vision features, thereby enhancing low-contrast vision features . The cluster center encoder uncovers connections between neighboring pixels, and the multiple granularity perceptions facilitated by the pyramid clustering module significantly improve dental plaque segmentation accuracy.
+
+(7)CFFormer: Cross CNN-Transformer Channel Attention and Spatial Feature Fusion for Improved Segmentation of Low Quality Medical Images
+**Task**: The paper focuses on improving the segmentation of low-quality medical images, aiming to address the limitations of existing hybrid CNN-Transformer models in effectively utilizing channel features, which is crucial for capturing contextual information and enhancing representation capabilities in such scenarios.
+
+**Proposed Method**: A hybrid CNN-Transformer model named CFFormer is proposed, which incorporates two key modules: the Cross Feature Channel Attention (CFCA) module and the X-Spatial Feature Fusion (XFF) module. The model uses dual encoders, with the CNN encoder capturing local features and the Transformer encoder modeling global features. The CFCA module filters and facilitates interactions between channel features from the two encoders, while the XFF module reduces semantic information differences in spatial features to enable smooth spatial feature fusion. This approach emphasizes channel attention between the two encoders, addressing their respective shortcomings in capturing local and global features.
+
+(8)CFU-Net: A Coarse–Fine U-Net With Multilevel Attention for Medical Image Segmentation
+**Task**: This paper focuses on medical image segmentation, aiming to address the limitations of traditional U-Nets that fail to exploit semantic differences among different organs and image modalities, leading to task-unawareness and limited generalization .
+
+**Proposed Method**: The paper proposes a coarse–fine U-Net (CFU-Net) architecture, which embeds two U-Nets (coarse U-Net and fine U-Net) with partly coupled structures. The coarse U-Net provides a coarse prediction to guide the decoding of the fine U-Net . Additionally, a multilevel attention module (MLAM) is designed to adjust feature propagation in the fine U-Net by leveraging interactions of multilevel information, including decision information, contextual information, and long-range dependencies . CFU-Net also adopts dynamic convolution to enhance the adaptability of convolution operations .
+
+(9)CMUNEXT: An Efficient Medical Image Segmentation Network Based on Large Kernel and Skip Fusion
+**Task**: This paper focuses on medical image segmentation, specifically addressing the challenge of effectively extracting global context information while leveraging the inductive bias of convolution in lightweight networks to fit scarce medical data.
+
+**Proposed method and innovations**: 
+- A lightweight fully convolutional segmentation network called CMUNeXt is proposed, which utilizes large kernel and inverted bottleneck design to thoroughly mix distant spatial and location information for efficient extraction of global context information.
+- The CMUNeXt block is designed, replacing ordinary convolutions with depthwise convolutions (large kernel) and two pointwise convolutions with inverted bottleneck to reduce redundant parameters while enhancing global information extraction.
+- The Skip-fusion block is introduced to enable smooth skip-connections, using group convolution and two inverted bottleneck pointwise convolutions for sufficient feature fusion, reducing the burden on encoder and decoder compared to traditional skip-connections.
+
+(10)CNN-Transformer Rectified Collaborative Learning for Medical Image Segmentation
+**Task**: This paper focuses on automatic and precise medical image segmentation (MIS), which is crucial for clinical diagnosis and analysis. It addresses the limitations of existing methods based on convolutional neural networks (CNNs) or Transformers, as well as their hybrid models, aiming to enhance the performance of both CNN-based and Transformer-based models for MIS tasks.
+
+**Proposed Method**: The paper proposes a CNN-Transformer rectified collaborative learning (CTRCL) framework that enables bi-directional knowledge transfer between CNN-based and Transformer-based models in both logit and feature spaces. Two key strategies are introduced: 
+1. A rectified logit-wise collaborative learning (RLCL) strategy, which uses ground truth to adaptively select and rectify wrong regions in student soft labels with dynamic weights for accurate knowledge transfer in the logit space.
+2. A class-aware feature-wise collaborative learning (CFCL) strategy, which projects intermediate features of the two models onto category prototypes to form class-aware representations, achieving effective knowledge transfer in the feature space by aligning these representations.
+
+(11) Conditional diffusion model with spatial attention and latent embedding for medical image segmentation
+### Summary of "Conditional diffusion model with spatial attention and latent embedding for medical image segmentation"
+- **Task**: The task of this paper is medical image segmentation, which is crucial for disease diagnosis, radiotherapy, and surgical treatment planning. Manual annotations in the segmentation process are time - consuming and not scalable, so the automation of segmentation using deep - learning algorithms is studied.
+- **Proposed Method**: The paper proposes a novel conditional diffusion model with spatial attention and latent embedding (cDAL). The innovation points are as follows:
+    - A separate discriminator is incorporated for each diffusion time - step. The discriminator learns the most discriminative features, and the spatial attention map calculated from its feature maps helps the model focus on discriminative regions during segmentation, guiding the diffusion process.
+    - A random latent embedding is used for each layer of the diffusion model. By modeling the denoising distribution as a complex multimodal distribution, it significantly reduces the number of training and sampling time - steps. 
+(12)CSWin-UNet: Transformer UNet with Cross-Shaped Windows for Medical Image Segmentation
+**Task**: The study focuses on medical image segmentation, aiming to address the limitations of existing methods in handling long-range dependencies with low computational consumption and retaining detailed information for accurate boundary segmentation, applicable to diverse modalities such as synapse multi-organ CT, cardiac MRI, and skin lesions.
+
+**Proposed method and innovations**: 
+- A novel U-shaped segmentation method called CSWin-UNet is proposed, which incorporates the CSWin self-attention mechanism into the UNet to facilitate horizontal and vertical stripes self-attention, enhancing computational efficiency and receptive field interactions.
+- The decoder utilizes a content-aware reassembly operator (CARAFE layer) that strategically reassembles features guided by predicted kernels for precise image resolution restoration.
+- It is a pure Transformer-based U-shaped architecture with CSWin Transformer blocks in both encoder and decoder, designed with different numbers of blocks according to different scales, and employs skip connections to fuse high-level semantic information with low-level spatial details.
+
+(13)DAG-UNet: Dissimilarity-Aware Global Context Guided Lightweight UNet for Medical Image Segmentation
+The paper focuses on medical image segmentation, aiming to address the challenges of high computational complexity of transformer-based models and the limitation of CNNs in capturing global context .
+
+The proposed method is DAG-UNet, a lightweight U-shaped network. Its innovations include: (1) a Dissimilarity-Aware Global Context (DAGC) block that captures contextual information from selected dissimilar channel features and extracts global context via MLP; (2) a Dissimilarity-Aware Feature Selection (DAFS) module that identifies and selects dissimilar features based on feature similarity to reduce channel-wise redundancies and increase feature diversity . The model leverages axial depth-wise convolutional layers to reduce computational complexity while extending the receptive field .
+
+(14)DPNet: A Dual-Path Network With Distance-Aware Attention for Medical Image Segmentation
+- **Task**: This paper focuses on medical image segmentation, specifically addressing the challenge of effectively extracting long-range contextual features, which is crucial for enhancing the efficiency of disease diagnosis and treatment .
+- **Proposed Method**: A dual-path network called DPNet is proposed. It opens an auxiliary path in the deep layer of the model encoder to learn global contextual information. The key innovations include:
+  - The Distance-Aware Attention (DAA) Module, which adjusts the relevance weights of tokens based on their distance to better learn global information .
+  - The Channel-Spatial Attention Guidance (CSAG) module, which allows global features from the auxiliary path to guide local features by calibrating them along both channel and spatial dimensions .
+
+(15)EMGANet: Edge-Aware Multi-Scale Group-Mix Attention Network for Breast Cancer Ultrasound Image Segmentation
+**Task**: This paper focuses on breast cancer ultrasound image segmentation, aiming to address challenges such as blurred boundaries and speckle noise in ultrasound images to achieve accurate segmentation .
+
+**Proposed Method**: The paper proposes the Edge-Aware Multi-Scale Group-Mix Attention Network (EMGANet). Its innovations include: 
+1. The Multi-Scale Group-Mix (MGM) block, which aggregates sparse global and local features by integrating a Group-Mix Attention mechanism (capturing token-to-token and token-to-group interactions across multiple scales) and a multi-scale feedforward neural network (using depthwise convolutions of different kernel sizes) .
+2. The Edge Feature Enhancement (EFE) block, which extracts edge features from multi-scale outputs of MGM blocks using Sobel operators and multi-scale depthwise convolutions to focus on cancer boundaries .
+3. The Selective Kernel Fusion (SKF) module, which effectively integrates deep semantic features and edge features by assigning weights through channel attention .
+
+(16)ERDUnet: An Efficient Residual Double-Coding Unet for Medical Image Segmentation
+**Task**: This paper focuses on medical image segmentation, aiming to address the challenges of difficult global context feature extraction and excessive parameters in existing convolutional neural network-based methods, so as to design an efficient and accurate segmentation model suitable for clinical applications .
+
+**Proposed Method and Innovations**:
+1. A novel network structure ERDUnet (Efficient Residual Double-Coding Unet) is proposed, which improves the traditional encoder-decoder model to save parameters while maintaining segmentation accuracy .
+2. A Context Enhanced Encoder (CEE) module is designed to simultaneously extract local features and global continuity information, improving feature extraction efficiency .
+3. A Differential Regional Attention (DRA) mechanism is developed to focus on extracting high-level semantics according to feature differences in different stages, optimizing segmentation boundaries and improving model learning efficiency .
+4. A Multiple Receptive-field Aggregation (MRA) module is constructed as a transition between encoder and decoder to reduce the semantic gap .
+5. A Feature-reuse Fusion Decoder (FFD) module is proposed, which uses multiple skip connections with residual connections to form dense patterns, fully integrating multi-level features for finer spatial resolution restoration .
+6. A double network paradigm is designed by combining two independent encoder-decoder networks (ERSUnet and ERSUnet-c) to improve final segmentation performance .
+
+(17)FBSNet: A Fast Bilateral Symmetrical Network for Real-Time Semantic Segmentation
+The paper focuses on real-time semantic segmentation, which is a pixel-level classification task on input images with broad application prospects in fields like autonomous driving and drone navigation.
+
+The proposed method is the Fast Bilateral Symmetrical Network (FBSNet), a symmetrical encoder-decoder structure with two branches: the Semantic Information Branch (SIB) and the Spatial Detail Branch (SDB). The SIB, as the main branch, uses a specially designed lightweight Bottleneck Residual Unit (BRU) to acquire contextual information and a sufficient receptive field. The SDB, a shallow network, employs a Detail Residual Module (DRM) to preserve spatial details. Additionally, a Feature Aggregation Module (FAM) is designed to effectively combine the outputs of the two branches. Channel attention modules are used in the SIB to enhance long-distance dependencies between channels, and spatial attention modules in the SDB to focus on useful spatial information.
+
+(18)Golden Cudgel Network for Real-Time Semantic Segmentation
+**Task**: The paper focuses on real-time semantic segmentation, aiming to address the issues of limited inference speed caused by multi-path blocks in existing models and the reliance on high-performance teacher models for training .
+
+**Proposed method**: The authors propose the Golden Cudgel Network (GCNet). Its key innovations include: 
+1. Using vertical multi-convolutions and horizontal multipaths during training, which are reparameterized into a single convolution for inference, enabling the model to self-enlarge in training and self-contract in inference .
+2. Introducing the Golden Cudgel Block (GCBlock) that leverages the training advantages of multi-path blocks and the inference advantages of single-path blocks through reparameterization .
+3. Allowing GCNet to act as a "teacher model" without needing an external one, thus avoiding the cost associated with relying on external teacher models .
+
+(19)H-vmunet: High-order Vision Mamba UNet for medical image segmentation
+**Task**: This paper focuses on medical image segmentation, aiming to address the limitations of existing models based on Convolutional Neural Networks (CNNs) and Vision Transformers (ViTs) in handling long-sequence information, local feature extraction, and computational complexity 🔶1-14🔶.
+
+**Proposed method and innovations**: 
+- A High-order Vision Mamba UNet (H-vmunet) model is proposed, which includes two novel modules: High-order 2D-selective-scan (H-SS2D) and Local-SS2D .
+- H-SS2D is designed to reduce redundant information introduction when SS2D features learn in the global receptive field, by enabling step-by-step phased processing of SS2D and leveraging high-order interaction operations to gradually integrate feature information .
+- Local-SS2D improves SS2D's local feature learning ability by combining the local feature advantages of convolution with SS2D's global receptive field capability.
+- H-vmunet is constructed by integrating H-SS2D and Local-SS2D into a U-Net framework, marking the first introduction of Vision Mamba into high-order operation models for feature processing .
+
+(20)I2U-Net: A dual-path U-Net with rich information interaction for medical image segmentation
+**Task**: The paper focuses on medical image segmentation, specifically addressing issues in segmenting lesions with blurred boundaries and irregular shapes. It targets four challenging tasks: skin lesion, polyp, brain tumor, and abdominal multi-organ segmentation .
+
+**Proposed Method**: 
+- A novel dual-path U-Net called I²U-Net is proposed, which encourages historical information re-usage and re-exploration through rich information interaction between two parallel paths (one for image feature information and the other for hidden state information with shared convolutional kernels), enabling deep layers to learn comprehensive features containing both low-level details and high-level semantics .
+- A multi-functional information interaction module (MFII) is introduced to model cross-path, cross-layer, and cross-path-and-layer information interactions via a unified design, allowing the network to behave like an unfolded RNN for modeling time sequence information .
+- A holistic information fusion and augmentation module (HIFA) is developed to selectively and sensitively integrate information from the dual encoders, bridging the encoder and decoder efficiently by merging advantages of local (high-frequency info) and global (low-frequency info) operations .
+
+(21)Learning Cross-Channel Representations for Semantic Segmentation
+The task addressed in this paper is semantic segmentation, a fundamental problem in multimedia that requires delicate per-pixel predictions of object categories .
+
+The proposed method is a novel Channel-Adaptive Network, which enhances features from the channel perspective in both the feature extraction and prediction stages. It includes two key innovative modules: (i) the Comprehensive Information Channel Attention (CiCA) module, which overcomes the shortcomings of existing channel attention by learning both low and high frequency components within each channel to emphasize informative channels; (ii) the Inter-Channel Relationship Reasoning (iCRR) module, applied on top of the feature extractor, which adaptively enhances interdependent channels by mining complementary associations between them through graph reasoning. Additionally, the network features a plug-and-play design, offering high flexibility .
+
+(22)LKM-UNet: Large Kernel Vision Mamba UNet for Medical Image Segmentation
+- **Task**: The paper focuses on 2D and 3D medical image segmentation, specifically targeting the segmentation of abdominal organs (such as liver, spleen, pancreas, etc.) in CT and MRI images .
+
+- **Proposed Method**: A Large Kernel vision Mamba U-shape Network (LKM-UNet) is introduced. Its innovations include: 
+  - Utilizing large Mamba kernels to achieve large receptive fields, excelling in local spatial modeling while maintaining efficient global modeling .
+  - Designing a hierarchical Mamba block consisting of pixel-level SSM (PiM) for local-neighborhood pixel modeling and patch-level SSM (PaM) for global long-range dependency modeling .
+  - Developing a bidirectional Mamba structure to enhance location-aware sequence modeling, reducing the impact of input order and focusing more on informative regions .
+
+(23)MCANet: Medical Image Segmentation with Multi-scale Cross-axis Attention
+**Task**: The paper focuses on medical image segmentation, aiming to address challenges in efficiently capturing multi-scale local information and building long-range dependencies among pixels, which is crucial due to the various sizes and shapes of lesion regions or organs . It specifically targets four tasks: skin lesion segmentation, nuclei segmentation, abdominal multi-organ segmentation, and polyp segmentation .
+
+**Proposed Method and Innovations**: 
+The paper proposes the multi-scale cross-axis attention (MCA) mechanism and integrates it into the multi-scale cross-axis attention network (MCANet). 
+- MCA enhances axial attention by introducing a dual cross-attention mechanism to address insufficient positional bias learning and limited long-distance interaction in axial attention caused by small datasets, thereby improving global information capture . 
+- To compensate for the lack of explicit attention to local information in axial attention, MCA uses multiple convolutions of strip-shaped kernels with different sizes in each axial attention path, enhancing local information encoding efficiency . 
+- MCANet, developed by integrating MCA into the MSCAN backbone, is lightweight with merely 4M+ parameters .
+
+(24)MedSegDiff-V2: Diffusion based Medical Image Segmentation with Transformer
+**Task**: This paper focuses on medical image segmentation, which aims to divide medical images into distinct regions of interest, and seeks to enhance the performance of diffusion-based models in this field by integrating transformer mechanisms .
+
+**Proposed Method**: The paper proposes a novel Transformer-based Diffusion framework called MedSegDiff-V2. To address the challenges of integrating transformer and diffusion models, two conditioning techniques are employed. One is the Anchor Condition with a novel Uncertain Spatial Attention (U-SA) mechanism, which integrates conditional segmentation features into the diffusion model encoder to reduce diffusion variance. The other is the Semantic Condition with a novel Spectrum-Space Transformer (SS-Former), which includes a timestep-adaptive Neural Band-pass Filter (NBP-Filter) to integrate conditional embedding into diffusion embedding and bridge the gap between noise and semantic features .
+
+(25)MedSegViG: Medical Image Segmentation with a Vision Graph Neural Network
+**Task**: The paper focuses on medical image segmentation, specifically addressing three typical tasks: polyp segmentation, skin lesion segmentation, and retinal vessel segmentation .
+
+**Proposed Method and Innovations**: A novel model named MedSegViG is proposed, which leverages a vision graph neural network (ViG). It consists of a hierarchical ViG encoder and a lightweight convolutional decoder. The hierarchical encoder extracts multi-level features and captures object relationships using graph neural networks by constructing images into graph representations (with patches as vertices and edges based on nearest neighbors). The lightweight decoder fuses these features to generate segmentation maps. This design addresses the limitation of existing methods (CNNs or transformers) in effectively modeling relationships among different objects in images .
+
+(26)MEGANet: Multi-Scale Edge-Guided Attention Network for Weak Boundary Polyp Segmentation
+**Task**: This paper focuses on polyp segmentation in colonoscopy images, aiming to address challenges such as intricate backgrounds, variations in polyp sizes and shapes, and indistinct boundaries to enable early diagnosis of colorectal cancer.
+
+**Proposed Method**: The study proposes the Multi-Scale Edge-Guided Attention Network (MEGANet), an end-to-end framework consisting of an encoder, a decoder, and the Edge-Guided Attention (EGA) module. The key innovation lies in the EGA module, which integrates classical edge detection techniques (specifically the Laplacian operator) with an attention mechanism. This module operates across multiple scales, taking encoded visual features from the encoder, high-frequency features from the Laplacian operator, and higher-level predicted features from the decoder as inputs. It preserves high-frequency edge information, bridges the semantic gap between low-level and high-level features, and guides the model to focus on crucial edge regions, thereby enhancing polyp boundary segmentation.
+
+(27)Merging Context Clustering with Visual State Space Models for Medical Image Segmentation
+**Task**: The paper focuses on medical image segmentation, which requires aggregating global and local feature representations, and aims to address the challenge of handling both long-range and short-range feature interactions in current methodologies .
+
+**Proposed Method**: The paper introduces a method named context clustering ViM (CCViM). It incorporates a context clustering module within existing Vision Mamba (ViM) models to segment image tokens into distinct windows for adaptable local clustering. The key innovation is the context clustering selective state space model (CCS6) layer, which combines the cross-scan layer with the context clustering (CC) layer. The CC layer views the image as a set of data points and dynamically groups them into clusters within local windows to capture local spatial visual contexts, effectively combining long-range and short-range feature interactions .
+
+(28)MNet-SAt: A Multiscale Network with Spatial-enhanced Attention for Segmentation of Polyps in Colonoscopy
+**Task**: This paper focuses on the automated segmentation of colonic polyps in colonoscopy images, aiming to overcome limitations of current approaches in preserving precise polyp boundaries, incorporating multi-scale features, and modeling spatial dependencies that reflect the intricate morphology of polyps .
+
+**Proposed Method and Innovations**: 
+The study proposes a novel framework called MNet-SAt (Multiscale Network with Spatial-enhanced Attention). Its key innovations include:
+- An Edge-Guided Feature Enrichment (EGFE) unit that preserves edge information to improve boundary quality by integrating a 2D Sobel operator for edge extraction .
+- A Multi-Scale Feature Aggregator (MSFA) unit that extracts and aggregates multi-scale features across channel-spatial dimensions using varying dilation rates and Squeeze-and-Excitation (SE) blocks .
+- A Spatial-Enhanced Attention (SEAt) unit that captures spatial-aware global dependencies within multi-scale aggregated features, leveraging Multi-Head Spatial-Enhanced Attention (MHSEAt) with Layer Normalization and Global Average Pooling .
+- A Channel-Enhanced Atrous Spatial Pyramid Pooling (CE-ASPP) module that resamples and recalibrates attentive features across scales through channel compression, multi-scale feature extraction, and inter-channel fusion .
+
+(29)MSDESIS: Multitask Stereo Disparity Estimation and Surgical Instrument Segmentation
+**Task**: The paper focuses on jointly estimating stereo disparity (for 3D geometry reconstruction of the surgical site) and performing binary surgical instrument segmentation, which are crucial for surgical navigation systems and robotic surgery automation .
+
+**Proposed Method**: A learning-based multi-task framework called MSDESIS is proposed. It features a shared feature encoder that enables interaction between the disparity estimation and segmentation tasks. The architecture uses modified versions of MADNet and U-Net for the two tasks respectively, ensuring real-time performance. A key innovation is a domain adaptation scheme where the segmentation task is supervised with monocular data to improve the adjacent disparity task, addressing data scarcity in the surgical domain. The framework is modular, allowing single-task mode when needed .
+
+(30)Multi-Layer Dense Attention Decoder for Polyp Segmentation
+**Task**: The paper focuses on polyp segmentation, which is crucial for expediting the diagnosis of colon cancer, aiming to address challenges such as large variations in polyp characteristics and subtle differences between polyps and their surrounding areas .
+
+**Proposed method**: 
+- A novel decoder architecture is proposed to hierarchically aggregate locally enhanced multi-level dense features, integrated with the PVT backbone network .
+- A Dense Attention Gate (DAG) is introduced, which adaptively fuses all previous layers’ features to establish local feature relations among all layers .
+- A novel nested decoder architecture is proposed to hierarchically aggregate decoder features, enhancing semantic features through horizontal extension of decoding layers .
+
+(31)Multi-Scale Contourlet Knowledge Guide Learning Segmentation
+**Task**: This paper focuses on semantic segmentation, specifically polyp segmentation (using five datasets: CVC-ColonDB, CVC-ClinicDB, Kvasir-SEG, ETIS-LaribPolypDB, EndoSceneStill) and building extraction (using two datasets: Massachusetts, WHU) .
+
+**Proposed Method and Innovations**: 
+A multi-scale contourlet knowledge guide learning network is proposed. Unlike CNNs that operate only in the spatial domain, it learns multi-scale contourlet sparse representation to obtain effective and sparse features in multi-scales and multi-directions . 
+Key innovations include: 
+1) Extending feature representation learning from the spatial domain to the spectral domain in a pixel-to-pixel paradigm ; 
+2) Leveraging contourlet sparse representation to learn multi-scale and multi-directional features, with contourlet filters providing additional detailed information to focus on object boundaries ; 
+3) Designing contourlet knowledge guide learning to enhance spectral domain feature representation and adaptively learn contourlet knowledge, capturing more boundary information .
+
+(32) PMFSNet: Polarized multi-scale feature self-attention network for lightweight medical image segmentation
+**Task**: The paper focuses on lightweight medical image segmentation, aiming to balance global and local feature processing while avoiding computational redundancy of large models, and to address challenges like limited medical image datasets, diverse imaging modalities, and complex clinical scenarios .
+
+**Proposed method**: The authors propose PMFSNet, a novel lightweight model with fewer than a million parameters for both 2D and 3D medical image segmentation. It streamlines the UNet-based hierarchical structure and simplifies the self-attention mechanism's computational complexity. A key innovation is the plug-and-play Polarized Multi-scale Feature Self-attention (PMFS) block, which enhances global multi-scale low-dimensional features to encode long-term dependencies. The PMFS block reduces self-attention's computational complexity from quadratic to linear and incorporates multi-scale features to balance performance and expand attention points .
+
+(33)Polyp Segmentation via Semantic Enhanced Perceptual Network
+**Task**: This paper focuses on accurate polyp segmentation, which is crucial for the precise diagnosis and prevention of colorectal cancer, addressing challenges such as the similarity between polyps and their surroundings in color, shape, texture, etc., and the significant variation in polyp scales .
+
+**Proposed Method**: A novel semantic enhanced perceptual network (SEPNet) is proposed. Its innovations include:
+- The Polyp Semantic Enhancement (PSE) module, which uses a coarse segmentation map as a basis, selects kernels to extract semantic information from corresponding regions, and enhances the discriminability of polyp features similar to the background .
+- A plug-and-play semantic guidance structure for PSE, leveraging accurate semantic information to guide scale perception and context fusion .
+- The Multi-scale Adaptive Perception (MAP) module, which enhances the flexibility of receptive fields by increasing information interaction between neighboring receptive field branches and dynamically adjusting the perception domain size based on each scale branch's contribution .
+- The Contextual Representation Calibration (CRC) module, which calibrates contextual representations by introducing an additional branch network to supplement details .
+
+(34)Polyper: Boundary Sensitive Polyp Segmentation
+The task of this paper is to address the challenge of polyp segmentation, particularly tackling the issue of blurred boundaries and improving the accuracy of polyp contour segmentation, especially for early polyps with low contrast and ill-defined margins .
+
+The proposed method is Polyper, a boundary-sensitive framework. It first extracts boundary and polyp regions from the initial segmentation map using morphological operators. Then, it designs a boundary-sensitive attention module that leverages the characteristics of interior polyp regions to enhance features near the boundary regions, modeling relationships between boundary and interior regions as well as between interior regions and background. The decoder of Polyper consists of two stages: potential boundary extraction (aggregating multi-scale features to generate initial predictions and separating regions) and boundary-sensitive refinement (using the boundary-sensitive attention module and a full-stage sensitivity strategy to refine boundary features) .
+
+(35)Pyramid Fusion Transformer for Semantic Segmentation
+The task of this paper is semantic segmentation, which aims to assign each pixel of an image with a semantic class label. It focuses on improving the per-mask classification approach in semantic segmentation .
+
+The proposed method is the Pyramid Fusion Transformer (PFT). Its innovations include: 1) A transformer-based decoder that performs cross-attention between learnable queries and each spatial feature from the feature pyramid in parallel and uses cross-scale inter-query attention to exchange complementary information, effectively aggregating multi-scale information . 2) A novel cross-attention weight loss to directly supervise the cross-attention weights with ground-truth category masks, facilitating and stabilizing the training process .
+
+(36)RTA-Former: Reverse Transformer Attention for Polyp Segmentation
+- **Task**: This paper focuses on polyp segmentation, which is a key aspect of colorectal cancer prevention, enabling early detection and guiding subsequent treatments .
+- **Proposed Method**: The paper introduces a novel network called RTA-Former. It uses a transformer model (specifically PVT) as the encoder backbone and innovatively adapts Reverse Attention (RA) with a transformer stage in the decoder through a Hierarchical Feature Synthesizer (HFS) composed of Reverse Transformer Attention (RTA) for enhanced edge segmentation . The decoder architecture can be combined with different sizes of PVT backbones to balance computation time and performance .
+
+(37)Salient Object Segmentation via Effective Integration of Saliency and Objectness
+**Task**: This paper focuses on salient object segmentation, aiming to effectively segment visually attractive salient objects from the background in images .
+
+**Proposed Method and Innovations**: 
+The method realizes salient object segmentation through graph-based integration of saliency and objectness. 
+- A graph is constructed with three types of vertices (regular vertex, background seed vertex, and terminal vertex) based on superpixel segmentation results. Edge weights in the graph are defined by integrating appearance difference, saliency difference, and objectness difference between superpixels, with adjustments based on the consistency between saliency and objectness maps and saliency uniformity .
+- The object probability of each superpixel is measured by finding the shortest path from its corresponding vertex to the terminal vertex on the graph, generating an object probability map that better highlights salient objects and suppresses backgrounds .
+- This object probability map is used to initialize salient objects and background, and is incorporated into the graph cut framework to obtain the final segmentation result .
+
+(38)ScribFormer: Transformer Makes CNN Work Better for Scribble-based Medical Image Segmentation
+The task of this paper is to address the limitation that existing CNN-based scribble-supervised segmentation methods can only capture small-range feature dependency, making it difficult to learn global shape information from limited scribble annotations, and thus to perform scribble-supervised medical image segmentation effectively .
+
+The proposed method is ScribFormer, a new CNN-Transformer hybrid solution with a triple-branch structure: a CNN branch, a Transformer branch, and an attention-guided class activation map (ACAM) branch. The CNN branch collaborates with the Transformer branch to fuse local features from CNN and global representations from Transformer, overcoming the limitations of existing methods. The ACAM branch unifies shallow and deep convolution features to further improve performance. It is the first Transformer-based solution for scribble-supervised medical image segmentation, and introduces ACAMs-consistency loss to train low-level convolutional layers under the supervision of high-level ones .
+
+(39)SCSegamba: Lightweight Structure-Aware Vision Mamba for Crack Segmentation in Structures
+**Task**: This paper focuses on pixel-level segmentation of structural cracks across various scenarios, aiming to address the challenges of effectively modeling crack morphology and texture while balancing segmentation quality with low computational resource usage .
+
+**Proposed Method**: The study proposes a lightweight Structure-Aware Vision Mamba Network (SCSegamba). Its key innovations include:
+- A Structure-Aware Visual State Space module (SAVSS) incorporating a lightweight Gated Bottleneck Convolution (GBC) for modeling crack morphological information and a Structure-Aware Scanning Strategy (SASS) to enhance perception of crack topology and texture by strengthening semantic continuity between crack pixels .
+- A Multi-Scale Feature Segmentation head (MFS) that integrates GBC and Multi-Layer Perceptron (MLP) to generate high-quality segmentation maps with low computational requirements .
+
+(40)Sparse Coding Inspired LSTM and Self-Attention Integration for Medical Image Segmentation
+**Task**: This paper focuses on accurate and automatic segmentation of medical images, which is essential for clinical diagnosis and analysis. It addresses both 2D and 3D medical image segmentation tasks .
+
+**Proposed Method**: The key innovation is the integration of Long Short-Term Memory (LSTM) and Self-Attention (SA) mechanisms inspired by sparse coding. Unlike conventional approaches that treat LSTM and SA as distinct modules, this method uses linear combinations of LSTM states for SA's query, key, and value (QKV) matrices to leverage LSTM's state compression and historical data retention capabilities, thereby enhancing SA's sparse coding and global dependency capture. Two modules are introduced: SA-LSTM, optimized for 2D data with denser features by employing linear combinations of LSTM states as QKV matrices; and LSTM-SA, tailored for 3D data with slice anisotropy by using LSTM states to determine the acceptance degree of QKV matrices in SA, ensuring context preservation without extra computational costs .
+
+(41)SRRNet: A Semantic Representation Refinement Network for Image Segmentation
+**Task**: This paper focuses on semantic segmentation, aiming to address issues such as inconsistent intraclass features and insufficient exploitation of global semantic context in existing methods .
+
+**Proposed Method**: 
+1. Introduces the concept of semantic representation, which is the global (dataset-level) representation of semantic context recorded by a memory tensor that stores global feature information of all categories .
+2. Proposes a semantic representation (SR) module consisting of semantic embedding (SE) and semantic attention (SA) blocks. The SE block adaptively embeds features into the semantic representation via memory similarity calculation, and the SA block aggregates embedded features using semantic attention .
+3. Constructs a semantic representation refinement network (SRRNet) by iteratively applying the SR module across multiple scales in a coarse-to-fine framework, enhancing structural reasoning and reducing the semantic gap .
+
+(42)TBConvL-Net: A hybrid deep learning architecture for robust medical image segmentation
+**Task**: The paper focuses on robust medical image segmentation (MIS) to address challenges like variations in scale, shape, texture, and contrast of pathologies, aiming to improve the precision and speed of disease diagnostics . It targets various segmentation tasks including thyroid nodule, breast cancer lesion, optic disc, chest radiograph, nuclei cell, fluorescent neuronal cell, and skin lesion segmentation .
+
+**Proposed Method and Innovations**: 
+- A hybrid architecture called TBConvL-Net is introduced, combining CNNs (for local features via encoder-decoder structure with depth-wise separable and densely connected convolutions) with bidirectional ConvLSTM (BConvLSTM, for capturing forward and backward temporal dependencies) and lightweight Swin Transformer Blocks (STB, for long-range dependencies and dynamic attention in skip connections) .
+- A novel composite loss function integrating Dice loss, Jaccard loss, and surface boundary loss is proposed to enhance segmentation robustness and boundary agreement with the gold standard .
+- The use of depth-wise separable convolutions reduces computational burden and improves feature learning by exploiting filter redundancy .
+
+(43)The Devil Is in the Boundary: Boundary-Enhanced Polyp Segmentation
+**Task**: This paper focuses on accurate polyp segmentation, which is challenging due to the various appearances of polyps and the tiny contrast between polyp areas and their surrounding background .
+
+**Proposed Method**: The paper introduces a boundary-enhanced framework called Focused on Boundary Segmentation (FoBS) that leverages multi-level collaboration among sample, feature, and optimization, with greater emphasis on polyp boundaries . Its innovations include:
+1. A boundary-aware mixup method to improve the model’s awareness of boundaries by generating diverse polyps while maintaining contextual contrast similar to real colonoscopy images .
+2. Deformable laplacian-based feature refining, which uses a deformable Laplacian refinement function to capture discriminative information from a deformable perceptual field, enhancing boundary feature representation and adapting to boundary variations (the first extension of laplacian to a deformable form for polyp segmentation) .
+3. Self-adjusting refinement coefficient learning for adaptive control over refinement strength at each location .
+4. A location-sensitive compensation criterion that assigns more importance to degraded features after refinement during optimization .
+
+(44)U-KAN Makes Strong Backbone for Medical Image Segmentation and Generation
+**Task**: The paper focuses on improving backbones for medical image segmentation and exploring the potential of such backbones as noise predictors in diffusion models for image generation .
+
+**Proposed Method**: The study introduces U-KAN, the first framework integrating Kolmogorov-Arnold Networks (KANs) into the U-Net architecture. A key innovation is the tokenized KAN block, which projects intermediate features into tokens and applies KAN operators to extract informative patterns, enhancing non-linear modeling capabilities and interpretability while maintaining compatibility with convolution-based designs .
+
+(45)Vision Mamba and xLSTM-UNet for medical image segmentation
+**Task**: This study focuses on medical image segmentation, aiming to address the limitations of traditional convolutional neural networks (CNNs) in capturing long-range dependencies and the high computational complexity of Transformer-based models in clinical applications .
+
+**Proposed Method**: The study introduces VMAXL-UNet, a novel segmentation network integrating Structured State Space Models (SSM) and lightweight LSTMs (xLSTM). It incorporates Visual State Space (VSS) and ViL modules in the encoder: the VSS module leverages SSM to capture long-range dependencies from distant regions, while the ViL module uses a gating mechanism to enhance integration of local and global features. The network follows an encoder-decoder architecture with skip connections, using patch merging for down-sampling in the encoder and patch expansion for up-sampling in the decoder . The key innovations include the introduction of the ViL module for improved handling of complex lesion morphology and blurred boundaries, and the combination of SSM and xLSTM in the encoder-decoder structure tailored for medical image segmentation .
+
+(46)VMKLA-UNet: vision Mamba with KAN linear attention U-Net
+**Task**: This paper focuses on medical image segmentation, aiming to address the limitations of existing CNNs (poor at capturing long-range dependencies) and Transformer-based models (high computational overhead) in this domain . It targets various medical image types, including skin lesions (ISIC 2017, ISIC 2018, PH² datasets), colon polyps (Polyp dataset), and multi-organ abdominal CT scans (Synapse dataset) .
+
+**Proposed Method**: The study introduces a novel model called VMKLA-UNet, which integrates Vision Mamba, KAN (Kolmogorov-Arnold networks) linear attention, and channel-spatial attention mechanisms . The encoder uses the VMamba framework with a bidirectional state-space model for efficient global context modeling and feature extraction . For the decoder, the proposed MKCSA architecture incorporates KAN linear attention (reducing computational complexity while enhancing global context comprehension) along with channel-spatial attention (dynamically emphasizing critical feature channels and refining focus on key spatial regions) . This integration aims to balance efficiency and segmentation performance .
+
+(47)WeakPolyp: You Only Look Bounding Box for Polyp Segmentation
+**Task**: This paper focuses on polyp segmentation, aiming to address the issue of data shortage and impaired generalization of polyp segmentation models caused by expensive pixel-level labels by leveraging cheaper and more accessible polyp bounding box annotations for weakly supervised learning .
+
+**Proposed Method**: The proposed WeakPolyp is a weakly supervised polyp segmentation model that solely relies on bounding box annotations. Its key innovations include:
+1. The mask-to-box (M2B) transformation, which transforms the predicted mask into a box-like mask through projection and back-projection. By supervising this transformed mask instead of the prediction itself, it mitigates the mismatch between coarse labels and precise predictions .
+2. The scale consistency (SC) loss, which provides dense supervision by explicitly aligning predictions of the same image at different scales, reducing the variation of predictions and improving model generalization .
+3. Being a plug-and-play model, it can be easily ported to other backbones, with the proposed modules only used during training without adding computation cost to inference .
+
+(48)Zig-RiR: Zigzag RWKV-in-RWKV for Efficient Medical Image Segmentation
+- **Task**: The paper focuses on efficient medical image segmentation, aiming to address the issues of insufficient local feature exploration, disrupted spatial continuity, and high computational complexity in existing methods when applied to both 2D and 3D medical images .
+
+- **Proposed Method**: A novel nested structure called Zigzag RWKV-in-RWKV (Zig-RiR) is proposed. It consists of Outer and Inner RWKV blocks to capture global and local features respectively without disrupting spatial continuity. Local patches are treated as "visual sentences" processed by Outer Zig-RWKV for global information, and each sentence is decomposed into subpatches ("visual words") handled by Inner Zig-RWKV for local information at negligible cost. Additionally, a Zigzag-WKV attention mechanism is introduced to ensure spatial continuity during token scanning .
+
+(49)Serp-Mamba: Advancing High-Resolution Retinal Vessel Segmentation with Selective State-Space Model
+Task: This paper focuses on vessel segmentation in high-resolution Ultra-Wide-Field Scanning Laser Ophthalmoscopy (UWF-SLO) images, which typically span 200 degrees and provide detailed views of the retina. Accurate segmentation of vessels in these images is essential for detecting and diagnosing fundus diseases such as diabetic retinopathy and glaucoma.​
+Proposed Method and Innovations:​
+The study proposes the Serpentine Mamba (Serp-Mamba) network, which introduces two key innovations specifically designed for high-resolution retinal vessel segmentation:​
+Serpentine Interwoven Adaptive (SIA) Scan Mechanism: This mechanism enables Mamba to scan UWF-SLO images along curved vessel structures in a snake-like crawling manner. Instead of fixed-direction scanning, it follows learned deformable trails that align with vascular texture transformations, ensuring effective and continuous capture of curved vascular structure features while overcoming orientation sensitivity.​
+Ambiguity-Driven Dual Recalibration (ADDR) Module: This module addresses the severe category imbalance problem in high-resolution images by delineating pixels using two learnable thresholds. It refines ambiguous pixels through a dual-driven strategy (vessel-driven and background-driven) while incorporating a Continuity Perception mechanism to ensure vascular topological consistency.​
+Overall, Serp-Mamba is the first Mamba-based work specifically tailored for high-resolution vessel segmentation, effectively tackling the unique challenges of maintaining tubular continuity and addressing class imbalance in UWF-SLO images through adaptive scanning and dual recalibration.
+
+(50)Task: This paper focuses on polyp segmentation from colonoscopy images, which is crucial for colorectal cancer diagnosis and surgery. The task faces two major challenges: (i) the same type of polyps has diverse sizes, colors, and textures; and (ii) the boundary between a polyp and its surrounding mucosa is often blurred and lacks clear contrast .​
+Proposed Method and Innovations:​
+The study proposes the Parallel Reverse Attention Network (PraNet), which integrates two key components with a recurrent cooperation mechanism.​
+Parallel Partial Decoder (PPD): This component aggregates features in high-level layers to generate a global map as the initial guidance area. Instead of using all multi-level features like traditional UNet-based models, PPD focuses on high-level features which provide more contextual information while requiring fewer computational resources .​
+Reverse Attention (RA) Module: This module mines boundary cues by establishing the relationship between areas and boundary cues. The reverse attention mechanism works by erasing existing estimated polyp regions from high-level side-output features, allowing the model to progressively refine imprecise and coarse estimations into accurate and complete prediction maps .​
+Overall, PraNet leverages a recurrent cooperation mechanism between areas and boundaries, enabling the model to calibrate misaligned predictions and improve segmentation accuracy. The architecture achieves real-time segmentation efficiency (∼50 fps) and significantly outperforms state-of-the-art methods across five challenging datasets .

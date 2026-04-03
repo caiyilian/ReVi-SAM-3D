@@ -1,0 +1,205 @@
+(1)Coarse-to-Fine Video Instance Segmentation With Factorized Conditional Appearance Flows
+- **Task**: This paper focuses on video instance segmentation (VIS), which involves automatically tracking, segmenting, and classifying all instances in a video sequence. It also demonstrates the method's generalizability on the unsupervised video object segmentation (UVOS) task 🔶1-17🔶.
+
+- **Proposed Method**: A novel generative model with hierarchical structural embedding learning is introduced. It adopts a coarse-to-fine approach: first coarsely locating instance pixels using Gaussian distribution, then building a mixing distribution by fusing hierarchical appearance embedding information. A factorization condition normalized flow (factorized conditional appearance flows) is utilized to estimate distribution parameters for improved segmentation. The whole pipeline is end-to-end trainable, without needing separate sub-networks for detection and association . Three key contributions are: exploiting a hierarchical pipeline from a generative model perspective, enabling stable training with a single network, and being the first to employ factorized conditional normalizing flows in VIS for instance appearance distribution estimation .
+
+(2)Deep Common Feature Mining for Efficient Video Semantic Segmentation
+The paper focuses on video semantic segmentation, aiming to address challenges like redundant computation and unreliable feature propagation while balancing accuracy, inference efficiency, and temporal consistency .
+
+The proposed method is Deep Common Feature Mining (DCFM). It decomposes features into common and independent representations: the common one from key-frames provides essential high-level information reusable by neighboring non-key frames without propagation, and the independent one from each frame captures frame-specific clues . A symmetric training strategy tailored for sparsely annotated data helps the backbone learn robust high-level common information, and a self-supervised loss reinforces intra-class feature similarity and temporal consistency . Additionally, a lightweight fusion module integrates multi-level features for comprehensive representation and efficiency .
+
+(3)DeformFlowNet: A deformable transformer with optical flow constraint for interventricular septum segmentation in echocardiography videos
+**Task**: This study focuses on the automatic segmentation of the interventricular septum in transthoracic echocardiography (TTE) videos, aiming to provide a reliable foundation for subsequent left ventricular hypertrophy (LVH) etiological diagnosis .
+
+**Proposed method and innovations**: 
+1. A hybrid 3D network named DeformFlowNet is proposed, which combines U-shaped attention networks and optical flow constraints for the segmentation task .
+2. A deformable transformer (DTFormer) block is added to the skip connection between the U-shaped network’s encoder and decoder, capturing long-range dependencies of multi-level encoded feature maps while balancing computational and spatial complexity .
+3. An optical flow consistency constraint module is introduced after the decoder to establish long-range relationships between TTE video frames and refine the mask images of intermediate frames .
+4. A joint optimization learning supervision design is adopted, combining U-shaped attention network loss and optical flow loss through weighted machine learning to guide better model training .
+
+(4)Diff-VPS: Video Polyp Segmentation via a Multi-task Diffusion Network with Adversarial Temporal Reasoning
+- **Task**: The paper focuses on video polyp segmentation (VPS), which aims to address challenges such as polyps' high camouflage, redundant temporal cues, intrinsic complexity (shape and color variability, fuzzy boundaries), and external shooting conditions (low boundary contrast, specular reflection, artifacts) in colonoscopy videos🔶1-7🔶1-14🔶.
+
+- **Proposed Method**: A novel diffusion-based network called Diff-VPS is presented as the first diffusion network for VPS. It incorporates multi-task supervision into diffusion models (Multi-task Diffusion Model) by performing classification and detection tasks simultaneously to improve segmentation discrimination, integrating high-level semantic information. Additionally, a Temporal Reasoning Module (TRM) is devised to explore temporal dependency by reconstructing the target frame from previous frames, and it is equipped with a generative adversarial self-supervised strategy to produce more realistic frames and capture better dynamic cues🔶1-7🔶1-16🔶.
+
+(5)Distortion Map-Guided Feature Rectification for Efficient Video Semantic Segmentation
+The task of this paper is video semantic segmentation, which aims to assign dense class labels to each frame in a video while meeting the efficiency requirements of real-time applications .
+
+The proposed method is a distortion map-guided feature rectification approach. It targets feature updating and correction on distorted regions with unreliable optical flow. A lightweight correction network (CoNet) is designed to extract updated features for distorted regions. A distortion map, generated in a coarse-to-fine manner by combining a coarse distortion map (detecting occlusions and rough moving boundaries from label inconsistency) and an edge map (locating boundaries and thin objects from a lightweight edge & thin object perceiving module), serves as weighted attention to guide feature rectification by aggregating warped features and updated features. Additionally, an auxiliary edge-semantics loss is proposed to implement class-specific supervision on distorted regions. The network is trained end-to-end and is highly modular .
+
+(6)Dual Correlation Network for Efficient Video Semantic Segmentation
+The task of this paper is video semantic segmentation, addressing challenges like large data volume and strong inter-frame redundancy in video data.
+
+The proposed method is a dual local and global correlation network, which includes three innovative modules. Firstly, a local attention based module that measures correlation and achieves feature aggregation in a local region between key frame and non-key frame in a non-parametric way, enhancing efficiency without relying on extra network modules. Secondly, a consistent constraint module that considers long-range correlation among pixels from a global view to promote intra-frame semantic consistency of non-key frames, improving accuracy without increasing inference load, inspired by knowledge distillation and using pair-wise similarity as knowledge. Thirdly, a key frame decision module that adaptively selects key frames based on feature transferring ability, defined by potential prediction error (PPE) to measure propagating ability, differing from fixed interval selection.
+
+(7)DVIS: Decoupled Video Instance Segmentation Framework
+- **Task**: The paper focuses on video instance segmentation (VIS), a critical computer vision task involving identifying, segmenting, and tracking all interested instances in a video simultaneously, with applications in autonomous driving and video editing. It also extends to video panoptic segmentation (VPS).
+
+- **Proposed Method**: The paper proposes a decoupled VIS framework called DVIS, which divides VIS into three independent sub-tasks: segmentation, tracking, and refinement. 
+  - A referring tracker with a core Referring Cross Attention (RCA) module is designed to model inter-frame association as a referring denoising task, encouraging interaction between instance representations of adjacent frames while avoiding information mixing.
+  - A temporal refiner is introduced, which uses 1D convolution and self-attention to integrate temporal information and cross-attention to correct instance representations, effectively utilizing information from the entire video.
+  - The decoupling strategy allows separate training of components, reducing computational costs.
+
+(8)DVIS++: Improved Decoupled Framework for Universal Video Segmentation
+**Task:**
+The paper introduces a unified framework for universal video segmentation, which is designed to handle multiple video segmentation tasks simultaneously, including video instance segmentation (VIS), video semantic segmentation (VSS), and video panoptic segmentation (VPS)[cite: 3, 21]. The framework is also extended to perform open-vocabulary universal video segmentation[cite: 10].
+
+**Proposed Method & Innovations:**
+The core innovation is a decoupled framework that breaks down the complex video segmentation problem into three simpler, cascaded sub-tasks: segmentation, tracking, and refinement[cite: 4, 60]. To address these sub-tasks, the paper proposes:
+* A novel **Referring Tracker**, which is a learnable module that models the frame-by-frame object association as a denoising or reconstruction process[cite: 6, 67].
+* A novel **Temporal Refiner**, which models the spatio-temporal representations of objects using the pre-aligned features generated by the tracker[cite: 6, 7].
+* An improved version named **DVIS++**, which enhances the tracking capability by incorporating a **denoising training strategy** to simulate challenging cases and uses **contrastive learning** to obtain more discriminative object representations.
+
+(9)Efficient Video Object Segmentation via Modulated Cross-Attention Memory
+- **Task**: The paper focuses on semi-supervised video object segmentation (VOS), aiming to address the challenges of increased GPU memory demands and reduced speed faced by transformer-based approaches when processing long videos, while maintaining segmentation accuracy .
+
+- **Proposed Method**: The proposed method is MAVOS, which introduces an optimized and dynamic long-term modulated cross-attention (MCA) memory. This MCA effectively encodes both local and global features at various levels of granularity, models temporal smoothness without requiring frequent memory expansion, and allows propagation of target information based on temporal changes of past frames. The architecture of MAVOS includes the Efficient Long Short-Term Transformer (E-LSTT) block, which consists of short-term propagation, long-term propagation (based on MCA memory), and self-propagation .
+
+(10)End-to-End Video Semantic Segmentation in Adverse Weather using Fusion Blocks and Temporal-Spatial Teacher-Student Learning
+**Task**: This paper focuses on end-to-end video semantic segmentation in adverse weather conditions, addressing the issue that current methods suffer from erroneous predictions due to degraded video frames and unreliable optical flows under such conditions.
+
+**Proposed Method**: 
+- It introduces the first end-to-end, optical-flow-free, domain-adaptive video semantic segmentation method.
+- A fusion block is designed to merge feature-level information from adjacent frames by matching and merging relevant pixels, enabling the model to exploit temporal information without relying on optical flows.
+- A temporal-spatial teacher-student learning approach is developed, involving a temporal teacher (exploring temporal information from adjacent frames) and a spatial teacher (harnessing spatial information from the current frame) to train the fusion block and enhance pseudo-label quality.
+- Temporal weather degradation augmentation is applied to consecutive frames, with correlated augmentations at corresponding locations and gradual intensity changes to simulate adverse weather characteristics.
+
+(11)First-frame Supervised Video Polyp Segmentation via Propagative and Semantic Dual-teacher Network
+- **Task**: The paper focuses on First-Frame Supervised Video Polyp Segmentation (FSVPS), which aims to perform automatic video polyp segmentation with only the first frame annotated per polyp video, regardless of the video's length, to reduce the high cost of frame-by-frame annotations .
+
+- **Proposed Method**: A novel Propagative and Semantic Dual-Teacher Network (PSDNet) is proposed. It adopts a teacher-student framework with two distinct teachers: a propagative teacher (an off-the-shelf universal video object segmentation model, XMem, to propagate the first-frame annotation to subsequent frames as pseudo labels) and a semantic teacher (an exponential moving average of the student model, providing more stable and time-invariant pseudo labels). Additionally, a back-propagation scoring method is introduced to assess the quality of the pseudo labels from both teachers (by propagating pseudo labels back to the first frame and measuring consistency with the first-frame annotation) and merge them to guide the student model .
+
+(12)Iterative feedback-based models for image and video polyp segmentation
+The task of this paper is to address the challenge of accurate segmentation of polyps in colonoscopy videos, which is crucial for automated colorectal cancer diagnosis, considering issues like frequent camera shake and frame defocusing in endoscopic imaging .
+
+The proposed method is FlowICBNet, which extends the Iterative Feedback Unit (IFU) from image polyp segmentation to video polyp segmentation. It leverages the continuity of video content by using segmentation results of previous frames as initialization masks for iterative refinement via IFU. Two key modules are introduced: Reference Frame Selection (RFS) that considers both the quality of candidate frame predictions and their distance from the current frame to select reliable reference frames, and Flow Guided Warping (FGW) that uses optical flow to warp the reference frame's prediction to generate the initial mask for the current frame .
+
+(13)Learning Deep Spatio-Temporal Dependence for Semantic Video Segmentation
+**Task**: The paper focuses on semantic video segmentation, which aims to assign semantic labels to every voxel (pixels from a spatio-temporal viewpoint) in a video, considering the complex spatio-temporal dependencies within the video .
+
+**Proposed Method and Innovations**: 
+The paper proposes a novel deep convolutional network architecture called deep spatio-temporal fully convolutional networks (DST-FCN). It leverages both spatial and temporal dependencies through a two-stream network:
+- A 2D FCN followed by convolutional long short-term memory (ConvLSTM) on the pixel level to explore long-term temporal dependence .
+- A 3D FCN on the voxel level to enable voxel-level prediction .
+The entire architecture is trained end-to-end, and the outputs of the two streams are combined via linear fusion .
+
+(14)Learning Local and Global Temporal Contexts for Video Semantic Segmentation
+**Task**: This paper focuses on video semantic segmentation (VSS), aiming to leverage temporal contextual information to improve segmentation performance. It addresses the challenge of effectively utilizing both local and global temporal contexts, which are crucial for understanding dynamic video content.
+
+**Proposed Methods**:
+1. **Coarse-to-Fine Feature Mining (CFFM)**: Designed to learn a unified representation of local temporal contexts (LTC), which include static and motional contexts from neighboring frames. It consists of two parts:
+   - **Coarse-to-Fine Feature Assembling (CFFA)**: Abstracts static and motional contexts by processing features from neighboring frames with varying receptive fields and pooling granularity based on their distance from the target frame.
+   - **Cross-frame Feature Mining (CFM)**: A non-self attention mechanism that mines useful information from neighboring frames to enhance target frame features, with queries from the target frame and keys/values from neighboring frames.
+
+2. **CFFM++**: An extension of CFFM that further incorporates global temporal contexts (GTC) from the entire video. It uniformly samples frames from the video, extracts global contextual prototypes via k-means clustering, and uses CFM to mine information from these prototypes to refine target features.
+
+(15)LGRNet: Local-Global Reciprocal Network for Uterine Fibroid Segmentation in Ultrasound Videos(时序信息传播用的是注意力)
+**Task**: This paper focuses on uterine fibroid segmentation in ultrasound videos. It collects and annotates the first ultrasound video dataset (UFUV) for this task, which contains 100 videos with per-frame expert annotations .
+
+**Proposed Method**: The paper presents the Local-Global Reciprocal Network (LGRNet) to efficiently propagate long-term temporal context. Key innovations include:
+- Cyclic Neighborhood Propagation (CNP) to propagate inter-frame local temporal context in a cyclic manner .
+- Hilbert Selective Scan (HilbertSS) to aggregate global temporal context by condensing each frame into frame bottleneck queries, efficiently connecting frames while preserving locality .
+- A reciprocal refinement mechanism via Condense and Distribute layers, which bridge local CNP and global HilbertSS to propagate crucial local-global temporal context .
+
+(16)LiVOS: Light Video Object Segmentation with Gated Linear Matching
+**Task**: The paper focuses on semi-supervised video object segmentation (VOS), where the segmentation of the first frame is provided, and the model needs to propagate this segmentation across subsequent frames .
+
+**Proposed Method**: To address the memory limitations of space-time memory (STM) networks caused by the quadratic complexity of softmax matching, the paper proposes LiVOS, a lightweight memory network. It employs linear matching via linear attention, reformulating memory matching into a recurrent process that reduces the quadratic attention matrix to a constant-size, spatiotemporal-agnostic 2D state. Additionally, gated linear matching is introduced, where a data-dependent gate matrix is multiplied with the state matrix to control information retention or discarding .
+
+(17)MED-VT: Multiscale Encoder-Decoder Video Transformer with Application to Object Segmentation
+**Task**: The paper focuses on dense prediction tasks in videos, specifically Automatic Video Object Segmentation (AVOS) and actor/action segmentation. AVOS aims to separate primary foreground object(s) from the background in a video without any supervision, while actor/action segmentation involves segmenting actors and their corresponding actions .
+
+**Proposed Method and Innovations**: 
+- A unified Multiscale Encoder-Decoder Video Transformer (MED-VT) is presented, which performs multiscale processing in both the encoder and decoder. The encoder uses within and between-scale attention mechanisms to capture spatial, temporal, and integrated spatiotemporal information. The decoder introduces learnable coarse-to-fine queries for precise target delineation .
+- A transductive learning scheme through many-to-many label propagation is proposed to ensure temporally consistent predictions across an entire input clip, extending beyond the previous many-to-one propagation .
+- The model operates solely on raw images without relying on input optical flow .
+
+(18)MemSAM: Taming Segment Anything Model for Echocardiography Video Segmentation
+**Task**: The paper focuses on echocardiography video segmentation, aiming to address long-standing challenges in this field, including massive speckle noise and artifacts, extremely ambiguous boundaries, and large variations of targeting objects across frames, especially with limited and sparse annotations .
+
+**Proposed Method**: The proposed model is MemSAM, which adapts the Segment Anything Model (SAM) to medical videos through a temporal-aware and noise-resilient prompting scheme. It employs a space-time memory containing both spatial and temporal information to prompt the segmentation of the current frame, with the memory carrying temporal cues sequentially prompting frame by frame. Additionally, a memory reinforcement mechanism is proposed to leverage predicted masks to improve memory quality before storage, alleviating the impact of speckle noise. The model is built on SAMUS, a medical foundation model based on SAM, to enhance adaptability to medical data .
+
+(19)RMem: Restricted Memory Banks Improve Video Object Segmentation
+**Task**: The paper focuses on video object segmentation (VOS), particularly addressing challenging scenarios such as significant object state changes (e.g., on the VOST dataset) and long-duration videos (e.g., on the Long Videos dataset) .
+
+**Proposed Method**: The study introduces "RMem" (Restricted Memory Banks), which revisits the strategy of restricting memory bank sizes instead of expanding them. The key innovations include:
+1. A "memory deciphering" analysis revealing that expanding memory banks increases decoding difficulty due to redundant information, hindering VOS modules' ability to extract relevant features .
+2. A restricted memory bank with a fixed number of frames, balanced for frame relevance and freshness using a strategy inspired by the upper confidence bound (UCB) algorithm from multi-arm bandit problems .
+3. Introduction of temporal positional embedding to enhance spatio-temporal reasoning, enabled by reduced training-inference discrepancy in memory lengths due to the restricted memory bank .
+
+(20)SALI: Short-term Alignment and Long-term Interaction Network for Colonoscopy Video Polyp Segmentation
+The task of this paper is to address the problem of automatic polyp segmentation in colonoscopy videos, which is crucial for providing timely prompts and richer information for colorectal cancer diagnosis .
+
+The paper proposes a novel network called SALI (Short-term Alignment and Long-term Interaction Network). Its innovations lie in two modules: the Short-term Alignment Module (SAM) and the Long-term Interaction Module (LIM). SAM aligns features of adjacent frames using deformable convolution to mitigate spatial variations caused by fast camera movement and close-up observation, then aggregates these aligned features to construct stable short-term representations. LIM establishes a memory bank to store historical polyp representations and uses a masked-attention block to explore retrospective relations, enabling the reconstruction of more reliable polyp features for current segmentation, especially in the presence of low-quality frames .
+
+(21)Semantic Video CNNs through Representation Warping
+**Task**: The paper focuses on converting CNN models for semantic segmentation of static images into CNNs suitable for video data, aiming to develop fast and accurate video semantic segmentation methods that utilize temporal coherence in video frames while reusing strong single-image segmentation CNNs .
+
+**Proposed method**: The key innovation is the NetWarp module, which warps intermediate CNN representations of the previous frame to corresponding representations of the current frame using optical flow between adjacent frames. It involves three steps: flow transformation (via a small CNN called FlowCNN to optimize optical flow), representation warping (using bilinear interpolation based on transformed flow), and combination of representations (linear combination of warped previous frame representations and current frame representations). Multiple NetWarp modules can be used at different layers of the CNN hierarchy, is fully differentiable for end-to-end training, and enables online processing of video frames with minimal extra computational cost .
+
+(22)Shifting More Attention to Breast Lesion Segmentation in Ultrasound Videos
+**Task**: This paper focuses on breast lesion segmentation in ultrasound (US) videos, which is essential for diagnosing and treating axillary lymph node metastasis .
+
+**Proposed Method**: 
+- A large-scale US video breast lesion segmentation dataset is curated, comprising 572 videos and 34,300 annotated frames (with 222 videos containing axillary lymph node metastasis), partitioned into training, validation, and test sets in a 4:2:4 ratio .
+- A novel Frequency and Localization Feature Aggregation Network (FLA-Net) is proposed, which learns temporal features from the frequency domain via a Frequency-based Feature Aggregation (FFA) module and predicts auxiliary lesion location maps through a two-branch decoder (segmentation and localization branches) .
+- A location-based contrastive loss is devised to reduce lesion location distance between neighboring frames in the same video and enlarge the distance between frames from different videos .
+
+(23)SipMaskv2: Enhanced Fast Image and Video Instance Segmentation
+**Task**: The paper focuses on both image and video instance segmentation, aiming to develop a fast single-stage method that can accurately detect and segment objects at the pixel level while maintaining real-time performance .
+
+**Proposed Method and Innovations**:
+- A lightweight spatial preservation (SP) module is designed to preserve instance spatial information by predicting separate spatial coefficients for multiple sub-regions within a bounding-box, enabling better delineation of spatially adjacent instances .
+- Two strategies (mask alignment weighting loss and feature alignment scheme) are proposed to better correlate mask prediction with object detection .
+- An IoU-based sample selection scheme is introduced to address the sample mismatch issue in mask training .
+- An instance refinement module (IRM) using light-weight border feature pooling is added to capture instance-specific features and refine instance classification scores .
+- The method is extended to video instance segmentation by adding a fully-convolutional branch for instance embedding .
+
+(24)Spatial-Temporal Consistency Enhanced Segmentation for Laparoscopic Surgical Videos
+The task addressed in this paper is the accurate segmentation of laparoscopic surgical videos, which is crucial for enhancing intraoperative guidance and improving patient outcomes, while tackling challenges like constrained field of view, visual clutter, frequent occlusions, and inconsistent illumination .
+
+The proposed method is SSTC-Seg (Surgical Spatial-Temporal Consistency Segmentation), a lightweight deep learning framework. It builds on a dual-branch encoder-decoder backbone, integrating a memory bank for temporal modeling, U-Net-style skip connections for spatial detail preservation, and a Hierarchical Dense Conditional Random Field (HD-CRF) for structured refinement. The HD-CRF refines coarse predictions by modeling spatial and temporal relationships, with a multi-scale refinement strategy. The memory bank leverages temporal context across frames to enhance temporal consistency .
+
+(25)Ultrasound Video Segmentation of Pubic Symphysis and Fetal Head for Angle of Progression Measurement
+- **Task**: This paper focuses on the automatic segmentation of the pubic symphysis (PS) and fetal head (FH) in intrapartum ultrasound videos, which is crucial for accurate measurement of the angle of progression (AoP), a key parameter for labor progress assessment and delivery decision guidance .
+
+- **Proposed Method**: An ultrasound video segmentation network (UVSN) is proposed. It adopts a U-shaped structure as the basic framework. Key innovations include: 
+  - An atrous convolutional block to extract semantic features at various scales, reducing semantic discrepancies between PS and FH .
+  - A bi-directional spatial-temporal fusion module based on ConvLSTM to utilize contextual information from adjacent frames, enhancing feature representation of the current frame .
+  - Coordinate attention to aggregate and decode feature layers from different granularities, focusing on target regions and enhancing localization .
+
+(26)Video-SwinUNet: Spatio-temporal Deep Learning Framework for VFSS Instance Segmentation（其中TCM是CNN架构的）
+**Task**: This paper focuses on instance segmentation of the laryngeal bolus and pharynx in Videofluoroscopic Swallow Study (VFSS) videos, which is crucial for dysphagia assessment .
+
+**Proposed Method**: A deep learning framework called Video-SwinUNet is proposed, which follows an encoder-decoder structure. It incorporates a ResNet-50 for feature extraction, a Temporal Context Module (TCM) to blend temporal features from neighboring frames into the target frame, a Swin Transformer for global context construction by tokenizing spatio-temporal features, and a cascaded CNN decoder for segmentation map reconstruction. Key innovations include the explicit utilization of temporal information via TCM, the adoption of Swin Transformer to enhance global feature encoding, and the introduction of Temporal feature Skip Connection (TSC) to improve segmentation map construction . Additionally, the framework provides the VFSS2022 dataset Part 2 with reliable labels for relevant structures .
+
+
+(27)Vivim: a Video Vision Mamba for Ultrasound Video Segmentation
+**Task**: This paper focuses on ultrasound video segmentation, specifically addressing thyroid segmentation in ultrasound videos, breast lesion segmentation in ultrasound videos, and polyp segmentation in colonoscopy videos .
+
+**Proposed Method and Innovations**: 
+- A Video Vision Mamba-based framework named Vivim is presented, which is the first work to incorporate state space models (SSMs) into ultrasound video segmentation .
+- A novel Temporal Mamba Block is designed, with a hierarchical encoder consisting of multiple such blocks to explore spatial and temporal dependencies at various scales .
+- A structured state space sequence model with spatiotemporal selective scan (ST-Mamba) is introduced, replacing self-attention or window-attention modules for efficient video visual representation learning .
+- An improved boundary-aware affine constraint across frames is employed to enhance the discriminative ability on ambiguous lesions .
+- A thyroid segmentation dataset VTUS with 100 annotated ultrasound videos and 9342 frames is contributed .
+
+(28)ConvLSTM-based Neural Network for Video Semantic Segmentation
+- **Task**: This paper focuses on video semantic segmentation, aiming to improve the accuracy of segmenting every pixel in video frames by capturing the temporal information between successive frames .
+
+- **Proposed Method**: A ConvLSTM-based neural network is proposed. The backbone network adopts DenseASPP, which combines dense connection, atrous convolution, and pooling pyramid structure to expand the receptive field . A ConvLSTM module is inserted between the encoder and decoder of the backbone to capture the temporal correlation between compact features of adjacent frames, with a 1×1 convolution layer added before the ConvLSTM module to reduce feature channel dimension and computational complexity . Additionally, data augmentation and learning rate attenuation strategies are used during training to avoid overfitting .
+
+(29)PolypNextLSTM: a lightweight and fast polyp video segmentation network using ConvNext and ConvLSTM
+**Task**: This paper focuses on polyp video segmentation, aiming to leverage temporal information from video data to improve segmentation performance, which is more in line with clinical practices compared to single-image-based methods, while ensuring the model is lightweight and suitable for edge devices.
+
+**Proposed method**: The proposed PolypNextLSTM adopts a UNet-like structure with a pruned ConvNext-Tiny as the backbone (by omitting the last two layers to reduce parameters). Its key innovation lies in integrating a bidirectional ConvLSTM as the temporal fusion module to exploit temporal features from consecutive frames. This model is designed to be the leanest in parameters and the fastest, with the architecture processing video sequences and incorporating skip connections inspired by the UNet decoder.
+
+(30)A Spatial-Temporal Progressive Fusion Network for Breast Lesion Segmentation in Ultrasound Videos
+- **Task**: This paper focuses on breast lesion segmentation in ultrasound videos, aiming to address challenges such as effectively utilizing both intra-frame and inter-frame lesion cues and the limitation of available breast ultrasound video datasets.
+
+- **Proposed Method and Innovations**:
+  - A novel Spatial-Temporal Progressive Fusion Network (STPFNet) is proposed for the task.
+  - It adopts a unified network architecture to simultaneously capture spatial dependencies within each frame and temporal correlations between different frames for feature representation of ultrasound videos.
+  - A new Multi-Granularity Feature Fusion (MGFF) module is designed to fuse information with different granularities, helping to improve lesion boundary blurring.
+  - The segmentation result of the previous frame is used as prior knowledge to suppress noisy background and learn a more robust representation.
+  - A new ultrasound video breast lesion segmentation dataset, UVBLS200, is constructed, comprising 200 videos (80 benign and 120 malignant lesions).
